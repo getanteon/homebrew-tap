@@ -5,16 +5,16 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "2.1.0"
+  version "2.1.1"
   license "AGPL-3.0-only"
 
   depends_on "go" => :optional
 
   on_macos do
-    url "https://github.com/getanteon/anteon/releases/download/v2.1.0/ddosify_2.1.0_darwin_all.tar.gz"
-    sha256 "dc9be0d1b23402b84ddf50b5d761f1760d1cf7d82abf8030252f7901330c6378"
+    url "https://github.com/getanteon/anteon/releases/download/v2.1.1/ddosify_2.1.1_darwin_all.tar.gz"
+    sha256 "f01e444a9d90b1ed46ccce14bf6220c441b9a0dfb02baad307137692615ca3ec"
 
-    def install
+    define_method(:install) do
       bin.install "ddosify"
       bash_completion.install "build/completions/ddosify.bash" => "ddosify"
       zsh_completion.install "build/completions/_ddosify"
@@ -25,10 +25,9 @@ class Ddosify < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/getanteon/anteon/releases/download/v2.1.0/ddosify_2.1.0_linux_amd64.tar.gz"
-      sha256 "8bd574d3109947b58e3623ebafcd81a52beafe598952416758c6a099838e3715"
-
-      def install
+      url "https://github.com/getanteon/anteon/releases/download/v2.1.1/ddosify_2.1.1_linux_amd64.tar.gz"
+      sha256 "4051402fcb3cbf0a932ada70640617daeddb61e18dc769b1bb4b07d72c4bda6d"
+      define_method(:install) do
         bin.install "ddosify"
         bash_completion.install "build/completions/ddosify.bash" => "ddosify"
         zsh_completion.install "build/completions/_ddosify"
@@ -37,10 +36,9 @@ class Ddosify < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/getanteon/anteon/releases/download/v2.1.0/ddosify_2.1.0_linux_armv6.tar.gz"
-      sha256 "9c6af555c4ea2f7a90118072ff605fef292e21f0e236f055e11666dd52e3e103"
-
-      def install
+      url "https://github.com/getanteon/anteon/releases/download/v2.1.1/ddosify_2.1.1_linux_armv6.tar.gz"
+      sha256 "5e7f818ae136a1742069c351b899c75985f3003a2bfcca6096e3c5d7ef20564e"
+      define_method(:install) do
         bin.install "ddosify"
         bash_completion.install "build/completions/ddosify.bash" => "ddosify"
         zsh_completion.install "build/completions/_ddosify"
@@ -49,10 +47,9 @@ class Ddosify < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/getanteon/anteon/releases/download/v2.1.0/ddosify_2.1.0_linux_arm64.tar.gz"
-      sha256 "805daeebd366d4f10174b9497e953c2c80d81a2fcc9a838e28f5a8d26ac2c18b"
-
-      def install
+      url "https://github.com/getanteon/anteon/releases/download/v2.1.1/ddosify_2.1.1_linux_arm64.tar.gz"
+      sha256 "f52a682f65afe94e5ba81ff070dd020f75fce716edf2d90aaf469217736194cb"
+      define_method(:install) do
         bin.install "ddosify"
         bash_completion.install "build/completions/ddosify.bash" => "ddosify"
         zsh_completion.install "build/completions/_ddosify"
